@@ -9,11 +9,11 @@ statement as machine-checked. The workflow records the exact tested commit/run.
 
 ## Statements covered
 
-Exact constant-multiplier and time-varying exponential recurrences; norm growth; failure of the original nonzero two-cycle; normalized minimal period two and constant norm.
+Convergence and strict positivity above one of the defining real zeta series; the integer-time Fourier identity; exact constant-multiplier and time-varying exponential recurrences; norm growth; failure of the original nonzero two-cycle; normalized minimal period two, constant norm and nonexistence of an ordinary limit for nonzero initial data.
 
 ## Limits and unresolved obligations
 
-The complex Fourier-series identity at integer times, zeta-series positivity, noninteger strict contraction and nonconvergence of the normalized orbit are separate analytic obligations. No topology, fractality, physical or metaphysical claim follows.
+Uniform convergence and strict normalized contraction away from integer times remain separate analytic obligations. No topology, fractality, physical or metaphysical claim follows.
 
 ## Evidence discipline
 
