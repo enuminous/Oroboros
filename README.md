@@ -92,3 +92,10 @@ The original HTML is preserved as retrieved from `enuminous/medium`; provenance 
 Reference definitions: [NIST DLMF §25.12, polylogarithms](https://dlmf.nist.gov/25.12#ii), [§25.2, Riemann zeta function](https://dlmf.nist.gov/25.2), and [§25.6, integer values](https://dlmf.nist.gov/25.6).
 
 No new license grant is introduced by this revision.
+
+## Lean 4 verification
+
+The pinned [formal package](formal/VERIFICATION.md) contains kernel-checked mathematical
+statements with an explicit [coverage and obligation ledger](formal/COVERAGE.md).
+The `Lean verification` workflow builds the package and tests its strict axiom audit.
+The workflow result for a commit, rather than this link alone, establishes compilation.
