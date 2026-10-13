@@ -1,0 +1,50 @@
+{
+  "scope": "Floating-point checks of discrete mathematical sequences; no physical validation or formal proof claimed.",
+  "numerical_domain": {
+    "s": [
+      1.25,
+      6
+    ],
+    "alpha": [
+      0,
+      0.3
+    ],
+    "integer_k": [
+      0,
+      20
+    ]
+  },
+  "source": "scripts/verify.cjs",
+  "passed": 7,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Zeta agrees with pi^2/6 and pi^4/90",
+      "status": "passed"
+    },
+    {
+      "name": "Zeta lies inside direct positive-series integral bounds across the UI domain",
+      "status": "passed"
+    },
+    {
+      "name": "Direct iteration matches all four closed forms, including k=0 and alpha=0",
+      "status": "passed"
+    },
+    {
+      "name": "Corrected cycle preserves both components of a complex state and closes after two steps",
+      "status": "passed"
+    },
+    {
+      "name": "Original model fails two-step closure for nonzero data",
+      "status": "passed"
+    },
+    {
+      "name": "Zero remains zero in every model",
+      "status": "passed"
+    },
+    {
+      "name": "Unsupported numerical domains are rejected",
+      "status": "passed"
+    }
+  ]
+}

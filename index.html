@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore the Ouroboros and Noroboro equations: exact solutions, a normalized two-cycle, and an interactive comparison of recursion and growth.">
+  <meta name="theme-color" content="#111719">
+  <title>Oroboros — Cycles, recursion & growth</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="src/math.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a href="#" class="wordmark" aria-label="Oroboros home"><span class="mark" aria-hidden="true">↻</span> OROBOROS</a>
+    <nav aria-label="Main navigation"><a href="#derivation">The equation</a><a href="#explore">Explore</a><a href="#evidence">Evidence</a><a href="https://github.com/enuminous/Oroboros">GitHub <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap">
+      <p class="eyebrow">MATTHEW CHENOWETH WRIGHT · MATHEMATICAL NOTE 01</p>
+      <h1>A universe<br>returning to <em>itself.</em></h1>
+      <p class="lede">An Ouroboros turns persistence into a cycle. Its expanding counterpart, Noroboro, turns repetition into growth. Here, the equations make the difference precise.</p>
+      <div class="hero-actions"><a class="button" href="#explore">Explore the dynamics <span aria-hidden="true">↓</span></a><a class="text-link" href="https://github.com/enuminous/Oroboros/blob/main/docs/DERIVATION.md">Read the full derivation ↗</a></div>
+      <div class="metadata"><span>Original · 05 February 2025</span><span>Revision · 13 October 2026</span><span>Discrete mathematical model</span></div>
+    </section>
+    <figure class="cosmic wrap">
+      <img src="assets/ouroboros-universe.png" alt="Conceptual three-dimensional cosmic Ouroboros: a closed wireframe loop made of galaxies curves into a serpent consuming its own tail." width="1536" height="1024">
+      <figcaption><span>01 / THE COSMIC METAPHOR</span> Conceptual artwork. A continuous cosmic loop is an artistic interpretation; the proved recurrence below has two discrete states.</figcaption>
+    </figure>
+    <section id="derivation" class="section wrap">
+      <div class="section-heading"><p class="eyebrow">02 / THE MATHEMATICAL CORE</p><h2>A phase reversal.<br>A multiplier. A consequence.</h2></div>
+      <p class="section-intro">Fix integer steps <i>k</i> ≥ 0, a real series exponent <i>s</i> &gt; 1, and a complex initial state. At each integer step, every exponential in the original Fourier sum equals one. The sum is therefore ζ(<i>s</i>), the Riemann zeta function.</p>
+      <div class="equation-banner" aria-label="F sub s of k equals the sum over positive integers n of exp 2 pi i n k divided by n to the s, equals zeta of s">
+        F<sub>s</sub>(k) = ∑<sub>n≥1</sub> e<sup>2πink</sup> / n<sup>s</sup> = ζ(s)
+      </div>
+      <div class="model-grid">
+        <article class="model-card"><span class="tag">ORIGINAL OUROBOROS</span><h3>Alternating growth</h3><p class="formula">O<sub>k</sub> = [−ζ(s)]<sup>k</sup> O<sub>0</sub></p><p>The state changes sign at every step. Because ζ(<i>s</i>) &gt; 1, its magnitude grows: the original final equation does not close into a nonzero cycle.</p><p class="result">|O<sub>k</sub>| = ζ(s)<sup>k</sup> |O<sub>0</sub>|</p></article>
+        <article class="model-card corrected"><span class="tag">EXPLICIT NORMALIZATION</span><h3>The cycle closes</h3><p class="formula">Ô<sub>k</sub> = (−1)<sup>k</sup> Ô<sub>0</sub></p><p>Divide the Fourier factor by ζ(<i>s</i>). At integer steps the resulting multiplier is −1. Magnitude is preserved, and two updates restore the initial state.</p><p class="result">Ô<sub>k+2</sub> = Ô<sub>k</sub></p></article>
+      </div>
+      <p class="note">The normalization changes the model. Its cycle theorem applies to integer steps; it does not automatically extend to arbitrary real times. The normalized discrete dynamics no longer depend on <i>s</i>.</p>
+    </section>
+    <section id="explore" class="section explorer">
+      <div class="wrap">
+        <div class="section-heading"><p class="eyebrow">03 / COMPARE THE DYNAMICS</p><h2>When repetition<br>becomes expansion.</h2></div>
+        <p class="section-intro">Choose the series exponent and growth rate. Each curve starts from a unit initial magnitude. The vertical axis shows <strong>ln(|state<sub>k</sub>| / |state<sub>0</sub>|)</strong>, so both ordinary and accelerating growth remain readable.</p>
+        <noscript><p class="note">Enable JavaScript for the interactive comparison. All equations and conclusions remain available on this page and in the derivation.</p></noscript>
+        <div class="controls">
+          <label for="exponent"><span>Series exponent <i>s</i><output id="exponent-value" for="exponent">2.00</output></span><input id="exponent" type="range" min="1.25" max="6" step="0.25" value="2"><small>1.25 <span>6.00</span></small></label>
+          <label for="alpha"><span>Growth parameter α<output id="alpha-value" for="alpha">0.08</output></span><input id="alpha" type="range" min="0" max="0.30" step="0.01" value="0.08"><small>0.00 <span>0.30</span></small></label>
+          <div class="zeta-readout"><span>ζ(<i>s</i>) ≈</span><strong id="zeta-value">1.644934</strong><small>Original magnitude multiplier</small></div>
+        </div>
+        <div class="chart-frame"><svg id="chart" viewBox="0 0 960 400" role="img" aria-labelledby="chart-title chart-description"><title id="chart-title">Log magnitude of four discrete recurrences</title><desc id="chart-description">Interactive comparison across integer steps zero through twenty. The normalized Ouroboros stays at zero log magnitude.</desc><g id="chart-content"></g></svg></div>
+        <div class="legend" aria-label="Chart legend"><span class="legend-original">Original Ouroboros</span><span class="legend-cycle">Normalized Ouroboros</span><span class="legend-noroboro">Original Noroboro</span><span class="legend-normalized">Normalized Noroboro</span></div>
+        <p id="chart-summary" class="chart-summary" aria-live="polite"></p>
+        <div class="growth-formula"><div><p class="eyebrow">THE NOROBORO SOLUTION</p><p class="formula">N<sub>k</sub> = (−1)<sup>k</sup> ζ(s)<sup>k</sup> e<sup>αk(k+1)/2</sup> N<sub>0</sub></p></div><p>The original multiplier e<sup>αk</sup> compounds at each step. Its accumulated exponent is quadratic, so α &gt; 0 produces growth faster than an ordinary exponential. Normalization removes the ζ(<i>s</i>)<sup>k</sup> factor.</p></div>
+        <details><summary>Inspect the first six steps</summary><p>These signed values use real initial state 1. The chart above shows magnitude, so sign reversal is visible here.</p><div class="table-scroll"><table><thead><tr><th scope="col">Step k</th><th scope="col">Original O<sub>k</sub></th><th scope="col">Normalized Ô<sub>k</sub></th><th scope="col">Original N<sub>k</sub></th><th scope="col">Normalized N̂<sub>k</sub></th></tr></thead><tbody id="step-table"></tbody></table></div></details>
+        <p class="note">Parameters are dimensionless. Lines connect discrete sample points for readability; they do not define continuous-time dynamics. The zeta value is computed numerically. Symbolic proofs and reproducible checks accompany the illustration.</p>
+      </div>
+    </section>
+    <section id="evidence" class="section wrap">
+      <div class="section-heading"><p class="eyebrow">04 / WHAT THE MATHEMATICS ESTABLISHES</p><h2>Keep the claim<br>the size of the proof.</h2></div>
+      <div class="evidence-grid">
+        <article><span class="status demonstrated">DEMONSTRATED</span><h3>Exact discrete dynamics</h3><p>The original recurrence grows. The explicitly normalized recurrence closes after two steps. The Noroboro exponent accumulates as k(k+1)/2.</p></article>
+        <article><span class="status established">ESTABLISHED MATHEMATICS</span><h3>Recognizable building blocks</h3><p>The series is a polylogarithm specialization, its integer samples are ζ(s), and the corrected cycle is the familiar map z → −z.</p></article>
+        <article><span class="status unresolved">UNRESOLVED</span><h3>Geometry and interpretation</h3><p>Möbius topology, fractality, and physical or metaphysical conclusions require their own definitions, constructions, and evidence.</p></article>
+      </div>
+      <p class="note">An indefinitely repeated orbit is different from an ordinary limit. A nonzero two-cycle never settles to one limiting value. This mathematical model also presupposes initial data; it does not decide whether absolute nonexistence is possible.</p>
+    </section>
+    <section class="section resources wrap">
+      <p class="eyebrow">05 / FOLLOW THE ARGUMENT</p>
+      <a href="https://github.com/enuminous/Oroboros/blob/main/docs/DERIVATION.md"><span><strong>The complete derivation</strong><small>Assumptions, exact solutions, proofs, and real-time limitations</small></span><span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/enuminous/Oroboros/blob/main/docs/CONSISTENCY_REVIEW.md"><span><strong>The consistency review</strong><small>Frozen criteria, negative results, and remaining obligations</small></span><span aria-hidden="true">↗</span></a>
+      <a href="archive/2025-02-05-original.html"><span><strong>The original article</strong><small>Preserved February 5, 2025 source, including claims revised here</small></span><span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/enuminous/Oroboros/blob/main/verification/results.json"><span><strong>Reproducible verification</strong><small>Seven numerical and boundary-check groups, with runnable source</small></span><span aria-hidden="true">↗</span></a>
+      <p class="references">Reference definitions: <a href="https://dlmf.nist.gov/25.12#ii">NIST DLMF · Polylogarithms</a> and <a href="https://dlmf.nist.gov/25.2">Riemann zeta function</a>.</p>
+    </section>
+  </main>
+  <footer class="wrap"><p><strong>OROBOROS</strong><br>Matthew Chenoweth Wright</p><p>Original concept · 2025<br>AI-assisted mathematical revision · 2026</p><a href="https://github.com/enuminous/Oroboros">Read the source ↗</a></footer>
+</body>
+</html>
