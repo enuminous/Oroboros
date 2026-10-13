@@ -26,7 +26,7 @@ theorem orbit_nonzero (q : ℝ) (hq : q ≠ 0) (z : ℂ) (hz : z ≠ 0) (n : ℕ
 
 theorem growth (q : ℝ) (hq : 1 < q) (z : ℂ) (hz : z ≠ 0) (n : ℕ) :
     ‖orbit q z n‖ < ‖orbit q z (n + 1)‖ := by
-  rw [orbit, norm_mul, norm_neg, Complex.norm_real, abs_of_pos (by linarith : 0 < q)]
+  rw [orbit, norm_mul, norm_neg, Complex.norm_real, Real.norm_eq_abs, abs_of_pos (by linarith : 0 < q)]
   have hp := norm_pos_iff.mpr (orbit_nonzero q (by linarith) z hz n)
   nlinarith
 
@@ -49,7 +49,7 @@ theorem normalized_not_fixed (z : ℂ) (hz : z ≠ 0) (n : ℕ) :
   intro h
   have hn := orbit_nonzero 1 (by norm_num) z hz n
   have hneg : -orbit 1 z n = orbit 1 z n := by simpa [orbit] using h
-  have hzero : orbit 1 z n = 0 := by linear_combination hneg
+  have hzero : orbit 1 z n = 0 := by linear_combination -(1/2 : ℂ) * hneg
   exact hn hzero
 
 theorem zero_orbit (q : ℝ) (n : ℕ) : orbit q 0 n = 0 := by simp [orbit_closed]
@@ -65,7 +65,7 @@ theorem noroboro_closed (q α : ℝ) (z : ℂ) (n : ℕ) :
   | zero => simp [noroboro]
   | succ n ih =>
     rw [noroboro, ih, pow_succ]
-    push_cast
+    simp only [Nat.cast_add, Nat.cast_one]
     have he : α * (n + 1) * (n + 1 + 1) / 2 =
         α * (n + 1) + α * n * (n + 1) / 2 := by ring
     rw [he, Real.exp_add]
