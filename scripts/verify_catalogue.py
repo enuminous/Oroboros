@@ -9,4 +9,4 @@ declarations = re.findall(r"^theorem\s+(\w+)", source, re.MULTILINE)
 assert len(names) == len(set(names)) == 28, "Catalogue must contain 28 distinct named theorems"
 assert set(names) == set(declarations), f"Catalogue/source mismatch: {set(names) ^ set(declarations)}"
 assert "import RequestProject.Oroboros" in Path("Audit.lean").read_text()
-print("All 28 catalogue theorem names match the compiled, audited RequestProject.Oroboros module.")
+print("All 28 catalogue theorem names match RequestProject.Oroboros; the audit imports that module. Compilation and axiom checks run separately.")
