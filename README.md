@@ -82,16 +82,19 @@ There are two existing Lean packages with different scopes:
 
 | Package | Scope and verification record |
 |---|---|
-| Root [RequestProject](lakefile.toml) | The 28 theorems catalogued in `UNIVERSE.md`. [Aristotle's report](ARISTOTLE_SUMMARY.md) records a completed build with no `sorry` and only Lean's standard axioms. |
+| Root [RequestProject](lakefile.toml) | The 28 theorems catalogued in `UNIVERSE.md`. The `catalogue` CI job builds the complete source, checks its 28-name correspondence, and audits all project declarations. See [full-catalogue verification](VERIFICATION.md) and [Aristotle's report](ARISTOTLE_SUMMARY.md). |
 | [formal/](formal/Oroboros.lean) | The core recurrence and series results covered by the existing [GitHub Actions workflow](.github/workflows/lean.yml), with a strict axiom audit and rejection controls. See its [coverage](formal/COVERAGE.md) and [reproduction instructions](formal/VERIFICATION.md). |
 
-The [successful October 13, 2026 verification run](https://github.com/enuminous/Oroboros/actions/runs/38487224539) checks `formal/`, its axiom audit, and the computational regression checks. **That workflow does not currently build the root `RequestProject` package**; its green status should be read within the scope above. [View current workflow runs](https://github.com/enuminous/Oroboros/actions/workflows/lean.yml).
+The [successful October 13, 2026 verification run](https://github.com/enuminous/Oroboros/actions/runs/38487224539) checks `formal/`, its axiom audit, and the computational regression checks. The workflow now also has a separate `catalogue` job for the complete root `RequestProject` package; check both job results for verification of both scopes. [View current workflow runs](https://github.com/enuminous/Oroboros/actions/workflows/lean.yml).
 
 To build Aristotle's catalogue from the repository root, use the committed [Lean 4.28.0 toolchain](lean-toolchain) and [dependency manifest](lake-manifest.json):
 
 ```sh
 lake exe cache get
 lake build
+python3 scripts/verify_catalogue.py
+lake env lean -DwarningAsError=true Audit.lean
+python3 scripts/test_axiom_audit.py
 ```
 
 Run the existing numerical consistency checks from the repository root:

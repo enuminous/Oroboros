@@ -13,7 +13,7 @@ Convergence and strict positivity above one of the defining real zeta series; th
 
 ## Limits and unresolved obligations
 
-Uniform convergence and strict normalized contraction away from integer times remain separate analytic obligations. No topology, fractality, physical or metaphysical claim follows.
+This earlier package does not include uniform convergence or strict normalized contraction away from integer times. The separately built and audited root `RequestProject` package proves strict contraction and fractional-class decay; see [the full catalogue](../UNIVERSE.md) and [its verification](../VERIFICATION.md). Uniform convergence is not separately listed as a theorem in either package. No topology, fractality, physical or metaphysical claim follows.
 
 ## Evidence discipline
 
