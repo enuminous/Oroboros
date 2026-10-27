@@ -1,38 +1,35 @@
 # Oroboros
 
+<!-- ENUMINOUS-UNIFIED-NAV:START -->
+## Repository navigation
+
+**eNuminous network:** [All public repositories](https://github.com/enuminous/EFMW/blob/main/REPOSITORY_NAVIGATION.md) · [EFMW](https://github.com/enuminous/EFMW) · [102 equations](https://github.com/enuminous/Monolithic_102_EFMW) · [Frozen Lean](https://github.com/enuminous/Monolithic-102-Zoo-Lean4) · [Zoo](https://github.com/enuminous/Tortoise) · [Papers](https://github.com/enuminous/papers) · [Quantum geometry](https://github.com/enuminous/Base888-Quantum-Geometry)
+
+**This project:** [Repository home](https://github.com/enuminous/Oroboros) · [Subject index](https://github.com/enuminous/EFMW/blob/main/REPOSITORY_NAVIGATION.md#fundamental-physics-cosmology-and-quantum-geometry) · [Published site](https://enuminous.github.io/Oroboros/) · [Web application](index.html)
+
+<details open>
+<summary><strong>On this page</strong></summary>
+
+- [The equations](#the-equations)
+- [Read and explore](#read-and-explore)
+- [Verification and reproduction](#verification-and-reproduction)
+- [What is proved, and what remains open](#what-is-proved-and-what-remains-open)
+- [Provenance and attribution](#provenance-and-attribution)
+
+
+</details>
+
+**Related repositories:** [EFMW-Neutron-Star-Glitch-Resonance](https://github.com/enuminous/EFMW-Neutron-Star-Glitch-Resonance) · [Music-of-the-Spheres](https://github.com/enuminous/Music-of-the-Spheres) · [EFMW-Constants-Problem](https://github.com/enuminous/EFMW-Constants-Problem) · [Universe5](https://github.com/enuminous/Universe5) · [EFMW](https://github.com/enuminous/EFMW) · [papers](https://github.com/enuminous/papers)
+
+> **Evidence boundary:** A link between projects is navigation, not an assertion of proven equivalence, experimental validation, or shared authorship. See each repository’s own status and review notes.
+<!-- ENUMINOUS-UNIFIED-NAV:END -->
+
+
 **Exact recurrences, a normalized two-cycle, and a Lean 4 theorem catalogue.**
 
 Oroboros develops Matthew Chenoweth Wright's Ouroboros and Noroboro equations from the February 5, 2025 article. The October 13, 2026 mathematical revision specifies their assumptions and exact solutions; Aristotle's completed formalization supplies the [28-theorem catalogue](UNIVERSE.md) and [Lean source](RequestProject/Oroboros.lean).
 
 [Interactive website](https://enuminous.github.io/Oroboros/) · [Theorem catalogue](UNIVERSE.md) · [Derivation](DERIVATION.md) · [Lean source](RequestProject/Oroboros.lean) · [Verification workflow](https://github.com/enuminous/Oroboros/actions/workflows/lean.yml) · [Provenance](PROVENANCE.md)
-
-<!-- ENUMINOUS-NETWORK:START -->
-**eNuminous network:** [All repositories](https://enuminous.github.io/EFMW/repositories.html) · [EFMW](https://enuminous.github.io/EFMW/) · [102 equations](https://github.com/enuminous/Monolithic_102_EFMW) · [165 triplets](https://enuminous.github.io/FieldSpace/) · [Zoo](https://enuminous.github.io/Tortoise/) · [Lean](https://enuminous.github.io/Aristotle-102-Monolithic-Lean/) · [Engine](https://enuminous.github.io/Archimedes-Engine/) · [Papers](https://enuminous.github.io/medium/papers-essays-index.html) · [Audit](https://github.com/enuminous/EFMW_Post156_Zoo_Audit/blob/main/portfolio/INTERLOCK_AUDIT.md)
-
-[Repository](https://github.com/enuminous/Oroboros) · [Published page](https://enuminous.github.io/Oroboros/)
-
-<details>
-<summary>Recent repositories (9)</summary>
-
-- [Oroboros](https://github.com/enuminous/Oroboros) · [README](https://github.com/enuminous/Oroboros/blob/main/README.md) · [Page](https://enuminous.github.io/Oroboros/)
-- [P-NP](https://github.com/enuminous/P-NP) · [README](https://github.com/enuminous/P-NP/blob/main/README.md) · [Page](https://enuminous.github.io/P-NP/)
-- [Research-Program](https://github.com/enuminous/Research-Program) · [README](https://github.com/enuminous/Research-Program/blob/main/README.md) · [Page](https://enuminous.github.io/Research-Program/)
-- [I-Have-Guts](https://github.com/enuminous/I-Have-Guts) · [README](https://github.com/enuminous/I-Have-Guts/blob/main/README.md) · [Page](https://enuminous.github.io/I-Have-Guts/)
-- [Wrights-Law](https://github.com/enuminous/Wrights-Law) · [README](https://github.com/enuminous/Wrights-Law/blob/main/README.md) · [Page](https://enuminous.github.io/Wrights-Law/)
-- [Aristotle-eNuminous](https://github.com/enuminous/Aristotle-eNuminous) · [README](https://github.com/enuminous/Aristotle-eNuminous/blob/main/README.md) · [Page](https://enuminous.github.io/Aristotle-eNuminous/)
-- [Multiverse-Simulator](https://github.com/enuminous/Multiverse-Simulator) · [README](https://github.com/enuminous/Multiverse-Simulator/blob/main/README.md) · [Page](https://enuminous.github.io/Multiverse-Simulator/)
-- [accelerando-8192](https://github.com/enuminous/accelerando-8192) · [README](https://github.com/enuminous/accelerando-8192/blob/main/README.md) · [Page source](https://github.com/enuminous/accelerando-8192/blob/main/docs/index.html)
-- [Codex-888](https://github.com/enuminous/Codex-888) · [README](https://github.com/enuminous/Codex-888/blob/main/README.md) · [Page](https://enuminous.github.io/Codex-888/)
-
-</details>
-
-<details>
-<summary>Repository indexes (1)</summary>
-
-- [index.html](https://github.com/enuminous/Oroboros/blob/main/index.html) · [Open page](https://enuminous.github.io/Oroboros/index.html)
-
-</details>
-<!-- ENUMINOUS-NETWORK:END -->
 
 ## The equations
 
